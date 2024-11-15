@@ -39,3 +39,4 @@ If you want to to stop the server, on the terminal page, use Ctrl+C then run ```
 # TODO
 - Add a way to preserve snapshots (optional)
 - Add basic login (set custom username and password)
+- Add multiple camera support
