@@ -21,8 +21,8 @@ Universal Camera Snapshot feature. Works on all cameras using RTSP only.
 15. You should see your camera now having snapshots.
 
 # Port Forwarding
-If you want to access the server away from wherever your server is, or as it is called, remote access. You need to port forward your servers port and cameras port
-But be warned, after you do this. Anyone who knows your servers IP can access your server and camera, so set up some basic security to prevent anyone you dont know, from watching you. 
+If you want to access the server away from wherever your server is, or as it is called, remote access. You need to port forward your servers port and cameras port.
+But be warned, after you do this, anyone who knows your servers IP can access your server and camera, so set up some basic security to prevent anyone you dont know, from watching you. 
 Port forwarding rules is usually located in your routers settings. This version of the universal snapshot feature does not include any security, so you may need to find tutorials on how to set up a basic login page. 
 
 # Open Source
