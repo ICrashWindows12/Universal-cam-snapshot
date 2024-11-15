@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Status</title>
+    <script>
+        function refreshImage() {
+            const img = document.getElementById('statusImage');
+            const currentTime = new Date().toLocaleTimeString();
+            img.src = `images/current_status.jpeg?${currentTime}`;
+        }
+
+        setInterval(refreshImage, 60000); // Refresh every minute
+    </script>
+</head>
+<body>
+    <h1>Current Status</h1>
+    <img id="statusImage" src="images/current_status.jpeg" alt="Current Status Image">
+    
+    <h1>Updates every one minute</h1>
+</body>
+</html>
