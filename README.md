@@ -31,3 +31,4 @@ And this project is open source, so you can contribute to this project at 0 cost
 # Issues
 1. You may see this image if you didn't configure the camera correctly,you had either put in the wrong credentials, misspelt the url, forgot to put your cameras rtsp address in the shell script, did not set up the camera account, missplelt either the camera account username, password or both
 ![Camera Image](https://raw.githubusercontent.com/ICrashWindows12/Universal-cam-snapshot/refs/heads/main/images/current_status.jpg)
+If you want to to stop the server, on the terminal page, use Ctrl+C then run ```sudo systemctl stop apache2```
