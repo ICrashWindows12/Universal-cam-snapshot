@@ -23,8 +23,7 @@ Universal Camera Snapshot feature. Works on all cameras using RTSP only.
 # Port Forwarding
 If you want to access the server away from wherever your server is, or as it is called, remote access. You need to port forward your servers port and cameras port.
 But be warned, after you do this, anyone who knows your servers IP can access your server and camera, so set up some basic security to prevent anyone you dont know, from watching you. 
-Port forwarding rules is usually located in your routers settings. This version of the universal snapshot feature does not include any security, so you may need to find tutorials on how to set up a basic login page. 
-
+Port forwarding rules is usually located in your routers settings. This version of the universal snapshot feature does only include basic encryption with base64. If you want more secure connections, you could modify the code your self and create new ways to sign in.
 # Open Source
 And this project is open source, so you can contribute to this project at 0 cost.
 
@@ -37,6 +36,7 @@ And this project is open source, so you can contribute to this project at 0 cost
 If you want to to stop the server, on the terminal page, use Ctrl+C then run ```sudo systemctl stop apache2```
 
 # TODO
-- Add a way to preserve snapshots (optional)
-- Add basic login (set custom username and password)
-- Add multiple camera support
+- Add a way to preserve snapshots (optional) ❌
+- Add basic login (set custom username and password) ✅
+- Add multiple camera support ❌
+  ***Only ticked when feature added***
