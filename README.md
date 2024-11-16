@@ -15,7 +15,7 @@ Universal Camera Snapshot feature. Works on all cameras using RTSP only.
 10. Change the ```RTSP_URL``` value using this template: ```rtsp://user:password@0.0.0.0:PORT/examplestream``` --Yes it can also be domains that you could use, DDNS domains or just normal domains work, if you know how to configure it. PORT represents any port ranging from 1 to 65535. Port 554 is mostly used for RTSP protocol. /examplestream is where the video stream is located, eg. TP-Link Tapo cameras use ```/stream1``` and ```/stream2```.
 11. You could also edit how long until next snapshot and when to delete the current snapshot. edit the 2 ```sleep``` values to whatever you want. Format is in Seconds, 1 minute = 60 seconds.
 12. Hit ```Ctrl+O``` then ```enter``` or ```return``` to save your changes
-13. Then go back to /var/www/html and run ```chmod +x properstart.sh && chmod +x /var/www/html/outputscript.sh && ./properstart.sh```
+13. Then go back to /var/www/html and run ```chmod +x startproper.sh && chmod +x /var/www/html/outputscript.sh && ./startproper.sh```
 
 14. Your server should start. Navigate to on your web browser ```127.0.0.1:80``` or ```localhost:80``` or ```http://0.0.0.0:80```, replace 0.0.0.0 with the servers IP address. ***127.0.0.1 and localhost:80 is just if you are accessing the web page from the computer you started the server on. Otherwise just use the IP version***
 15. The web page will ask for a username and password, by default, the username is admin,  the password is password.
