@@ -17,9 +17,9 @@ Universal Camera Snapshot feature. Works on all cameras using RTSP only.
 12. Hit ```Ctrl+O``` then ```enter``` or ```return``` to save your changes
 13. Then go back to /var/www/html and run ```chmod +x properstart.sh && chmod +x /var/www/html/outputscript.sh && ./properstart.sh```
 
-14. Your server should start. Navigate to on your web browser ```127.0.0.1:80``` or ```localhost:80``` or ```http://0.0.0.0:80```, replace 0.0.0.0 with the servers IP address.
-15. You should see your camera now having snapshots.
-
+14. Your server should start. Navigate to on your web browser ```127.0.0.1:80``` or ```localhost:80``` or ```http://0.0.0.0:80```, replace 0.0.0.0 with the servers IP address. ***127.0.0.1 and localhost:80 is just if you are accessing the web page from the computer you started the server on. Otherwise just use the IP version***
+15. The web page will ask for a username and password, by default, the username is admin,  the password is password.
+16. after you enter in the correct credentials, you should see your camera
 # Port Forwarding
 If you want to access the server away from wherever your server is, or as it is called, remote access. You need to port forward your servers port and cameras port.
 But be warned, after you do this, anyone who knows your servers IP can access your server and camera, so set up some basic security to prevent anyone you dont know, from watching you. 
