@@ -23,9 +23,9 @@ Universal Camera Snapshot feature. Works on all cameras using RTSP only.
 # Port Forwarding
 If you want to access the server away from wherever your server is, or as it is called, remote access. You need to port forward your servers port and cameras port.
 But be warned, after you do this, anyone who knows your servers IP can access your server and camera, so set up some basic security to prevent anyone you dont know, from watching you. 
-Port forwarding rules is usually located in your routers settings. This version of the universal snapshot feature does only include basic encryption with base64. If you want more secure connections, you could modify the code your self and create new ways to sign in.
+Port forwarding rules is usually located in your routers settings. This version of the universal snapshot feature does only include basic encryption with base64. If you want more secure connections, you could modify the code your self and create new ways to sign in. To change the default password, you need to visit ![Link](https://base64encode.org/). Type in the password you want to use, leave default settings and click the ```Encode``` button. Make sure the password has symbols, numbers, lowercase and uppercase letters, more than 8 characters to create a strong password, then put it into auth.js file, which is located in the directory you put your web page files. Navigate to that and ```sudo nano auth.js``` and change the ```correctBase64Password``` value to whatever your base64 encoded hash thing is. Note ***This is not secure as to what is stopping a random from going into your web page and trying to find the auth.js file, you need to prevent access from anyone opening that file except you***
 # Open Source
-And this project is open source, so you can contribute to this project at 0 cost.
+And this project is open source, so you can contribute to this project at 0 cost. Maybe you could make the frontend look better and the backend more secure?
 
 # Showcase
 (soon)
