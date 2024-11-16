@@ -5,18 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Current Status</title>
     <script src="auth.js"></script>
+    <style>
+        /* Simple styles for the modal */
+        #loginModal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+        #modalContent {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px;
+        }
+    </style>
     <script>
-        function authenticate() {
-            const username = prompt("Enter your username:");
-            const password = prompt("Enter your password:");
-            const base64Password = encodeToBase64(password); // Encode the entered password to Base64
+        async function authenticate() {
+            // Show the modal for username and password input
+            document.getElementById('loginModal').style.display = 'block';
+        }
 
-            if (username === correctUsername && base64Password === correctBase64Password) {
+        async function submitCredentials() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const hashedPassword = await hashPassword(password); // Hash the entered password
+
+            if (username === correctUsername && hashedPassword === correctHashedPassword) {
+                localStorage.setItem('authenticated', 'true'); // Set authentication flag
                 document.getElementById('protectedContent').style.display = 'block';
                 refreshImage(); // Start refreshing the image after successful login
+                closeModal(); // Close the modal
             } else {
                 alert("Invalid credentials. Access denied.");
                 document.body.innerHTML = "<h1>Access Denied</h1>";
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+
+        async function checkAuthentication() {
+            const isAuthenticated = localStorage.getItem('authenticated');
+            if (isAuthenticated === 'true') {
+                document.getElementById('protectedContent').style.display = 'block';
+                refreshImage(); // Start refreshing the image if already authenticated
+            } else {
+                await authenticate(); // Show modal for credentials if not authenticated
             }
         }
 
@@ -26,8 +70,8 @@
             img.src = `images/current_status.jpeg?${currentTime}`;
         }
 
-        // Call authenticate on page load
-        window.onload = authenticate;
+        // Call checkAuthentication on page load
+        window.onload = checkAuthentication;
     </script>
 </head>
 <body>
@@ -36,6 +80,21 @@
         <img id="statusImage" src="images/current_status.jpeg" alt="Current Status Image">
         
         <h1>Updates every one minute</h1>
+    </div>
+
+    <!-- Modal for username and password input -->
+    <div id="loginModal">
+        <div id="modalContent">
+            <h2>Login</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <br><br>
+            <button onclick="submitCredentials()">Submit</button>
+            <button onclick="closeModal()">Cancel</button>
+        </div>
     </div>
 </body>
 </html>
