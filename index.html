@@ -4,20 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Current Status</title>
+    <script src="auth.js"></script>
     <script>
+        function authenticate() {
+            const username = prompt("Enter your username:");
+            const password = prompt("Enter your password:");
+            const base64Password = encodeToBase64(password); // Encode the entered password to Base64
+
+            if (username === correctUsername && base64Password === correctBase64Password) {
+                document.getElementById('protectedContent').style.display = 'block';
+                refreshImage(); // Start refreshing the image after successful login
+            } else {
+                alert("Invalid credentials. Access denied.");
+                document.body.innerHTML = "<h1>Access Denied</h1>";
+            }
+        }
+
         function refreshImage() {
             const img = document.getElementById('statusImage');
             const currentTime = new Date().toLocaleTimeString();
             img.src = `images/current_status.jpeg?${currentTime}`;
         }
 
-        setInterval(refreshImage, 60000); // Refresh every minute
+        // Call authenticate on page load
+        window.onload = authenticate;
     </script>
 </head>
 <body>
-    <h1>Current Status</h1>
-    <img id="statusImage" src="images/current_status.jpeg" alt="Current Status Image">
-    
-    <h1>Updates every one minute</h1>
+    <div id="protectedContent" style="display: none;">
+        <h1>Current Status</h1>
+        <img id="statusImage" src="images/current_status.jpeg" alt="Current Status Image">
+        
+        <h1>Updates every one minute</h1>
+    </div>
 </body>
 </html>
