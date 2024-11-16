@@ -18,12 +18,14 @@ Universal Camera Snapshot feature. Works on all cameras using RTSP only.
 13. Then go back to /var/www/html and run ```chmod +x startproper.sh && chmod +x /var/www/html/outputscript.sh && ./startproper.sh```
 
 14. Your server should start. Navigate to on your web browser ```127.0.0.1:80``` or ```localhost:80``` or ```http://0.0.0.0:80```, replace 0.0.0.0 with the servers IP address. ***127.0.0.1 and localhost:80 is just if you are accessing the web page from the computer you started the server on. Otherwise just use the IP version***
-15. The web page will ask for a username and password, by default, the username is admin,  the password is password.
+15. The web page will ask for a username and password, by default, the username is admin, the password is password.
 16. after you enter in the correct credentials, you should see your camera
 # Port Forwarding
 If you want to access the server away from wherever your server is, or as it is called, remote access. You need to port forward your servers port and cameras port.
 But be warned, after you do this, anyone who knows your servers IP can access your server and camera, so set up some basic security to prevent anyone you dont know, from watching you. 
-Port forwarding rules is usually located in your routers settings. This version of the universal snapshot feature does only include basic encryption with base64. If you want more secure connections, you could modify the code your self and create new ways to sign in. To change the default password, you need to visit ![Link](https://base64encode.org/). Type in the password you want to use, leave default settings and click the ```Encode``` button. Make sure the password has symbols, numbers, lowercase and uppercase letters, more than 8 characters to create a strong password, then put it into auth.js file, which is located in the directory you put your web page files. Navigate to that and ```sudo nano auth.js``` and change the ```correctBase64Password``` value to whatever your base64 encoded hash thing is. Note ***This is not secure as to what is stopping a random from going into your web page and trying to find the auth.js file, you need to prevent access from anyone opening that file except you***
+Port forwarding rules is usually located in your routers settings. This version of the universal snapshot feature includes SHA-256 encryption. The username is only stored as plaintext, the password is hashed. 
+1. If you want to change the password, or username, visit ![SHA-256 Generator](https://tools.keycdn.com/sha256-online-generator) and generate a strong password using a mixture of letters, numbers and symbols, uppercase and lowercase letters.
+2. go into auth.js and change the hashed password to whatever the password you hashed is.
 # Open Source
 And this project is open source, so you can contribute to this project at 0 cost. Maybe you could make the frontend look better and the backend more secure?
 
