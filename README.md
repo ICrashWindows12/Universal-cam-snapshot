@@ -32,6 +32,11 @@ And this project is open source, so you can contribute to this project at 0 cost
 # Showcase
 (soon)
 
+# OS Support (all the slimmed down OS's for small devices) (no it cannot run the server, only access the server)
+- Supports Apple Watch, via ![IPCams](https://apps.apple.com/us/app/ip-camera-viewer-ipcams/id1045600272?itsct=apps_box_badge&itscg=30200) (only jpeg snapshot+web browser)
+- Supports Galaxy Watch via ![WearableIPCamera Viewer](https://play.google.com/store/apps/details?id=com.aktuna.gear.ipcamviewer&hl=en_US) (JPEG snapshot only)
+- Supports slimmed down OS's for small devices (if it has a web browser or an app you could download)
+
 # Issues
 1. You may see this image if you didn't configure the camera correctly,you had either put in the wrong credentials, misspelt the url, forgot to put your cameras rtsp address in the shell script, did not set up the camera account, missplelt either the camera account username, password or both
 ![Camera Image](https://raw.githubusercontent.com/ICrashWindows12/Universal-cam-snapshot/refs/heads/main/images/current_status.jpg)
@@ -41,4 +46,5 @@ If you want to to stop the server, on the terminal page, use Ctrl+C then run ```
 - Add a way to preserve snapshots (optional) ❌
 - Add basic login (set custom username and password) ✅
 - Add multiple camera support ❌
-  ***Only ticked when feature added***
+- Convert stream from rtsp to mjpeg (only for cameras which don't have support for http stream for easy access, no app required) ❌
+-  ***Only ticked when feature added***
