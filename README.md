@@ -13,7 +13,7 @@ Universal Camera Snapshot feature. Works on all cameras using RTSP only.
 8. Run ```cd /var/www/html``` then run ```sudo mv /path/to/files /var/www/html```
 9. Navigate to /images/outputscript.sh and run ```sudo nano outputscript.sh```
 10. Change the ```RTSP_URL``` value using this template: ```rtsp://user:password@0.0.0.0:PORT/examplestream``` --Yes it can also be domains that you could use, DDNS domains or just normal domains work, if you know how to configure it. PORT represents any port ranging from 1 to 65535. Port 554 is mostly used for RTSP protocol. /examplestream is where the video stream is located, eg. TP-Link Tapo cameras use ```/stream1``` and ```/stream2```.
-11. You could also edit how long until next snapshot and when to delete the current snapshot. edit the 2 ```sleep``` values to whatever you want. Format is in Seconds, 1 minute = 60 seconds.
+11. You could also edit how long until next snapshot. edit the ```sleep``` values to whatever you want. Format is in Seconds, 1 minute = 60 seconds.
 12. Hit ```Ctrl+O``` then ```enter``` or ```return``` to save your changes
 13. Then go back to /var/www/html and run ```chmod +x startproper.sh && chmod +x /var/www/html/outputscript.sh && ./startproper.sh```
 
@@ -29,6 +29,10 @@ Port forwarding rules is usually located in your routers settings. This version 
 # Open Source
 And this project is open source, so you can contribute to this project at 0 cost. Maybe you could make the frontend look better and the backend more secure?
 
+# How to use
+Most of the steps have instructions on them, but some features may not be listed
+1. Whenever you run ```./startproper.sh``` in your linux terminal, it will ask if you want to preserve snapshots, you could either do ```y``` or ```n```. Y means yes, N means No. Every few intervals, it will save the current snapshots if you want a timelapse. Also, it doesn't have motion detection, use another program. Whenever you want the update the current status is up to you. To change the intervals, edit the ```sleep``` value, only the one that has ```60``` seconds, do not touch the ```1``` second interval
+2. If you want to to stop the server, on the terminal page, use Ctrl+C then run ```sudo systemctl stop apache2```.
 # Showcase
 (soon)
 
@@ -40,10 +44,9 @@ And this project is open source, so you can contribute to this project at 0 cost
 # Issues
 1. You may see this image if you didn't configure the camera correctly,you had either put in the wrong credentials, misspelt the url, forgot to put your cameras rtsp address in the shell script, did not set up the camera account, missplelt either the camera account username, password or both
 ![Camera Image](https://raw.githubusercontent.com/ICrashWindows12/Universal-cam-snapshot/refs/heads/main/images/current_status.jpg)
-If you want to to stop the server, on the terminal page, use Ctrl+C then run ```sudo systemctl stop apache2```
 
 # TODO
-- Add a way to preserve snapshots (optional) ❌
+- Add a way to preserve snapshots (optional) ✅
 - Add basic login (set custom username and password) ✅
 - Add multiple camera support ❌
 - Convert stream from rtsp to mjpeg (only for cameras which don't have support for http stream for easy access, no app required) ❌
