@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Current Status</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
     <script src="auth.js"></script>
     <style>
         /* Simple styles for the modal */
@@ -34,28 +35,12 @@
             document.getElementById('loginModal').style.display = 'block';
         }
 
-        async function submitCredentials() {
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const hashedPassword = await hashPassword(password); // Hash the entered password
-
-            if (username === correctUsername && hashedPassword === correctHashedPassword) {
-                localStorage.setItem('authenticated', 'true'); // Set authentication flag
-                document.getElementById('protectedContent').style.display = 'block';
-                refreshImage(); // Start refreshing the image after successful login
-                closeModal(); // Close the modal
-            } else {
-                alert("Invalid credentials. Access denied.");
-                document.body.innerHTML = "<h1>Access Denied</h1>";
-            }
-        }
-
         function closeModal() {
             document.getElementById('loginModal').style.display = 'none';
         }
 
         async function checkAuthentication() {
-            const isAuthenticated = localStorage.getItem('authenticated');
+            const isAuthenticated = getCookie('authenticated');
             if (isAuthenticated === 'true') {
                 document.getElementById('protectedContent').style.display = 'block';
                 refreshImage(); // Start refreshing the image if already authenticated
@@ -65,7 +50,7 @@
         }
 
         function refreshImage() {
-            const img = document.getElementById('statusImage');
+            const img = document .getElementById('statusImage');
             const currentTime = new Date().toLocaleTimeString();
             img.src = `images/current_status.jpeg?${currentTime}`;
         }
