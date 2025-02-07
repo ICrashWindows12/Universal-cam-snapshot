@@ -27,7 +27,7 @@ Port forwarding rules is usually located in your routers settings. This version 
 1. If you want to change the password, or username, visit ![SHA-256 Generator](https://tools.keycdn.com/sha256-online-generator) and generate a strong password using a mixture of letters, numbers and symbols, uppercase and lowercase letters.
 2. go into auth.js and change the hashed password to whatever the password you hashed is.
 # Open Source
-And this project is open source, so you can contribute to this project at 0 cost. Maybe you could make the frontend look better and the backend more secure?
+And this project is open source, so you can contribute to this project at 0 cost. Maybe you could make the frontend look better and the backend more secure?. Honestly the backend needs work to be done like storing the js file somewhere else, I think I might work on it later when I have time, going to view how they do it locally then I will do it myself without revealing and also being able to change the password within the site. 
 
 # How to use
 Most of the steps have instructions on them, but some features may not be listed
