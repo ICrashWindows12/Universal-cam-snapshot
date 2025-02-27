@@ -51,3 +51,8 @@ Most of the steps have instructions on them, but some features may not be listed
 - Add multiple camera support ❌
 - Convert stream from rtsp to mjpeg (only for cameras which don't have support for http stream for easy access, no app required) ❌
 -  ***Only ticked when feature added***
+
+
+# Working on a WebNVR Service
+- I am working on making a WebNVR service so it may use code from here, eg authentication and the snapshot feature. So like this is not being maintained and it also a bit insecure because it does expose the hashed password.
+- Scrapped for now.
